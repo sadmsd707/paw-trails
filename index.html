@@ -1,1 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paw Trails — Animal Welfare Initiative by CubeWorkSocial</title>
+<meta name="description" content="Feed, rescue, shelter and rehome street animals. Join Paw Trails — an animal welfare initiative bringing together animals in need, volunteers, donors and adopters.">
 
+<!-- Fonts: Fraunces (display serif) + Work Sans (body/utility) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<noscript>
+  <style>
+    .animal-card[data-status],
+    .gallery-item[data-cat] {
+      display: block !important;
+    }
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style>
+</noscript>
+</head>
+<body>
+
+<!-- Signature scroll trail: a trail of paw prints marks progress down the page, echoing the "journey" from street to home -->
+<div class="paw-trail" id="pawTrail" aria-hidden="true">
+  <div class="paw-trail__fill" id="pawTrailFill"></div>
+</div>
+
+<!-- ================= NAVIGATION ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-inner">
+    <a href="#home" class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+          <circle cx="20" cy="24" r="7" fill="currentColor"/>
+          <circle cx="8" cy="14" r="4" fill="currentColor"/>
+          <circle cx="17" cy="7" r="4.2" fill="currentColor"/>
+          <circle cx="27" cy="7" r="4.2" fill="currentColor"/>
+          <circle cx="34" cy="16" r="4" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="brand__text">Paw Trails</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#our-work">Our Work</a></li>
+        <li><a href="#animals">Animals</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a href="#animals" class="btn btn--primary btn--nav">Adopt Now</a>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#our-work">Our Work</a></li>
+      <li><a href="#animals">Animals</a></li>
+      <li><a href="#volunteer">Volunteer</a></li>
+      <li><a href="#donate">Donate</a></li>
+      <li><a href="#stories">Stories</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#animals" class="btn btn--primary">Adopt Now</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= 1. HERO ================= -->
+  <section class="hero" id="home">
+    <div class="container hero__inner">
+      <div class="hero__copy" data-reveal>
+        <p class="eyebrow">CubeWorkSocial &middot; Animal Welfare Initiative</p>
+        <h1 class="hero__headline">Every Paw Deserves Care, Love &amp; a Home.</h1>
+        <p class="hero__sub">Together, we can feed, rescue, protect and give stray animals a better life — one paw at a time.</p>
+        <div class="hero__ctas">
+          <a href="#animals" class="btn btn--primary">🐾 Adopt a Dog</a>
+          <a href="#donate" class="btn btn--outline">❤️ Help an Animal</a>
+        </div>
+      </div>
+      <div class="hero__media" data-reveal>
+        <img class="hero__image" src="images/hero-feeding.jpg" alt="Person feeding rescued street dogs">
+        <div class="hero__media-tag">Rescued. Loved. Home.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. IMPACT ================= -->
+  <section class="impact" id="impact">
+    <div class="container">
+      <div class="impact__grid">
+        <div class="impact__stat" data-counter="500" data-suffix="+">
+          <span class="impact__number">0</span>
+          <span class="impact__label">Animals Fed</span>
+        </div>
+        <div class="impact__stat" data-counter="150" data-suffix="+">
+          <span class="impact__number">0</span>
+          <span class="impact__label">Animals Rescued</span>
+        </div>
+        <div class="impact__stat" data-counter="80" data-suffix="+">
+          <span class="impact__number">0</span>
+          <span class="impact__label">Successful Adoptions</span>
+        </div>
+        <div class="impact__stat" data-counter="50" data-suffix="+">
+          <span class="impact__number">0</span>
+          <span class="impact__label">Volunteers</span>
+        </div>
+      </div>
+      <p class="impact__note">*Figures shown reflect our ongoing efforts and are updated periodically.</p>
+    </div>
+  </section>
+
+  <!-- ================= 5. ABOUT OUR WORK ================= -->
+  <section class="about" id="about">
+    <div class="container">
+      <p class="eyebrow">About the Initiative</p>
+      <h2 class="section-title">Our Work for Street Animals</h2>
+      <p class="section-lede">Compassion works best when it's practical. Our animal welfare initiative focuses on the everyday, tangible support street animals need — food in their bellies, shelter from the weather, medical care when they're hurt, and families willing to bring them home.</p>
+
+      <div class="feature-grid">
+        <article class="feature-card" data-reveal>
+          <span class="feature-card__icon" aria-hidden="true">🍲</span>
+          <h3>Feeding</h3>
+          <p>Regularly providing food and water to stray dogs across our feeding routes.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <span class="feature-card__icon" aria-hidden="true">🏠</span>
+          <h3>Shelter</h3>
+          <p>Supporting and creating safe spaces and dog houses for animals to rest and stay dry.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <span class="feature-card__icon" aria-hidden="true">🏥</span>
+          <h3>Rescue &amp; Medical Care</h3>
+          <p>Responding to animals that are injured, sick, or in urgent need of attention.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <span class="feature-card__icon" aria-hidden="true">🏡</span>
+          <h3>Adoption</h3>
+          <p>Connecting rescued animals with responsible, loving adopters for the long term.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. ACTIVITIES ================= -->
+  <section class="activities" id="our-work">
+    <div class="container">
+      <p class="eyebrow">How the Work Happens</p>
+      <h2 class="section-title">Our Animal Welfare Activities</h2>
+
+      <div class="activity-list">
+        <article class="activity-row" data-reveal>
+          <div class="activity-row__image"><img src="images/hero-feeding.jpg" alt="Person feeding rescued street dogs"></div>
+          <div class="activity-row__copy">
+            <h3>Feed a Stray</h3>
+            <p>A regular bowl of food and clean water can be the difference between a hard day and a hopeful one. Our feeding routes reach dogs who have no one else looking out for them.</p>
+            <a href="#feeding" class="btn btn--text">Support Feeding →</a>
+          </div>
+        </article>
+
+        <article class="activity-row activity-row--reverse" data-reveal>
+          <div class="activity-row__image"><img src="images/street-dogs.jpg" alt="Street dogs resting safely together"></div>
+          <div class="activity-row__copy">
+            <h3>Build a Safe Shelter</h3>
+            <p>Harsh sun, heavy rain and cold nights are dangerous without cover. Simple dog houses and shaded shelters give street animals a safe place to retreat to.</p>
+            <a href="#shelter" class="btn btn--text">Support Shelter →</a>
+          </div>
+        </article>
+
+        <article class="activity-row" data-reveal>
+          <div class="activity-row__image"><img src="images/dog-care.jpg" alt="Person caring for a rescued dog"></div>
+          <div class="activity-row__copy">
+            <h3>Rescue &amp; Medical Help</h3>
+            <p>Injured and sick animals need fast attention. From roadside rescues to vet visits, timely care can turn a crisis into a recovery.</p>
+            <a href="#report" class="btn btn--text">Help an Animal →</a>
+          </div>
+        </article>
+
+        <article class="activity-row activity-row--reverse" data-reveal>
+          <div class="activity-row__image"><img src="images/dog-group-2.jpg" alt="Dogs living together in a safe environment"></div>
+          <div class="activity-row__copy">
+            <h3>Find a Forever Home</h3>
+            <p>Every rescued animal deserves more than survival — they deserve a home, a family, and a future.</p>
+            <a href="#animals" class="btn btn--text">View Animals →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. ANIMALS NEEDING HOMES ================= -->
+  <section class="animals" id="animals">
+    <div class="container">
+      <p class="eyebrow">Ready When You Are</p>
+      <h2 class="section-title">Meet Our Dogs</h2>
+      <p class="section-lede">Real dogs, real stories, real second chances. Statuses update as adoptions progress.</p>
+
+      <div class="animal-filters" role="tablist" aria-label="Filter animals by status">
+        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="available" role="tab" aria-selected="false">Available</button>
+        <button class="chip" data-filter="in-progress" role="tab" aria-selected="false">In Progress</button>
+        <button class="chip" data-filter="adopted" role="tab" aria-selected="false">Adopted</button>
+      </div>
+
+      <div class="animal-grid" id="animalGrid">
+        <!-- Animal cards are rendered by js/script.js from a data array (Firestore "animals" collection in production).
+             Static sample markup below shows the expected structure / is used as a no-JS fallback. -->
+        <article class="animal-card" data-status="available" data-reveal>
+          <div class="animal-card__img"><img src="images/dog-care.jpg" alt="Bruno, rescued dog"></div>
+          <span class="status-badge status-badge--available">Available for Adoption</span>
+          <div class="animal-card__body">
+            <h3>Bruno <span class="animal-card__meta">🐶 2 yrs · Male · Indie</span></h3>
+            <p class="animal-card__location">📍 [ADD LOCATION]</p>
+            <p>Friendly, energetic and loves people. Bruno is great with kids and other dogs.</p>
+            <div class="animal-card__ctas">
+              <a href="#" class="btn btn--text" data-view-story="bruno">View Story</a>
+              <a href="#adopt-form" class="btn btn--small">Adopt Me</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="animal-card" data-status="in-progress" data-reveal>
+          <div class="animal-card__img"><img src="images/mother-puppies.jpg" alt="Coco, rescued dog"></div>
+          <span class="status-badge status-badge--progress">Adoption in Progress</span>
+          <div class="animal-card__body">
+            <h3>Coco <span class="animal-card__meta">🐶 1.5 yrs · Female · Indie</span></h3>
+            <p class="animal-card__location">📍 [ADD LOCATION]</p>
+            <p>Gentle and a little shy at first, Coco warms up quickly once she trusts you.</p>
+            <div class="animal-card__ctas">
+              <a href="#" class="btn btn--text" data-view-story="coco">View Story</a>
+              <a href="#adopt-form" class="btn btn--small">Adopt Me</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="animal-card" data-status="adopted" data-reveal>
+          <div class="animal-card__img"><img src="images/dog-group.jpg" alt="Simba, rescued dog"></div>
+          <span class="status-badge status-badge--adopted">Adopted</span>
+          <div class="animal-card__body">
+            <h3>Simba <span class="animal-card__meta">🐶 3 yrs · Male · Indie</span></h3>
+            <p class="animal-card__location">📍 [ADD LOCATION]</p>
+            <p>Once a rescue, now the king of his new home. Simba found his family in 2024.</p>
+            <div class="animal-card__ctas">
+              <a href="#" class="btn btn--text" data-view-story="simba">View Story</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animal story modal is built dynamically by js/script.js -->
+
+  <!-- ================= 9. ADOPTION PROCESS + FORM ================= -->
+  <section class="adopt" id="adopt-form">
+    <div class="container">
+      <p class="eyebrow">Bringing a Rescue Home</p>
+      <h2 class="section-title">How Adoption Works</h2>
+
+      <ol class="process">
+        <li><span class="process__num">1</span>Meet an Animal</li>
+        <li><span class="process__num">2</span>Submit Adoption Request</li>
+        <li><span class="process__num">3</span>NGO Reviews Request</li>
+        <li><span class="process__num">4</span>Interaction / Verification</li>
+        <li><span class="process__num">5</span>Adoption</li>
+      </ol>
+
+      <div class="form-card" data-reveal>
+        <h3>Adoption Request Form</h3>
+        <form id="adoptionForm" novalidate>
+          <div class="form-row">
+            <label for="adoptName">Full Name</label>
+            <input type="text" id="adoptName" name="fullName" required>
+          </div>
+          <div class="form-row form-row--split">
+            <div>
+              <label for="adoptEmail">Email</label>
+              <input type="email" id="adoptEmail" name="email" required>
+            </div>
+            <div>
+              <label for="adoptPhone">Phone</label>
+              <input type="tel" id="adoptPhone" name="phone" required>
+            </div>
+          </div>
+          <div class="form-row form-row--split">
+            <div>
+              <label for="adoptCity">City</label>
+              <input type="text" id="adoptCity" name="city" required>
+            </div>
+            <div>
+              <label for="adoptAnimal">Animal Interested In</label>
+              <input type="text" id="adoptAnimal" name="animalOfInterest" placeholder="e.g. Bruno">
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="adoptAddress">Address</label>
+            <input type="text" id="adoptAddress" name="address" required>
+          </div>
+          <div class="form-row">
+            <label for="adoptWhy">Why do you want to adopt?</label>
+            <textarea id="adoptWhy" name="whyAdopt" rows="3" required></textarea>
+          </div>
+          <div class="form-row">
+            <label for="adoptExperience">Previous Pet Experience</label>
+            <textarea id="adoptExperience" name="petExperience" rows="2"></textarea>
+          </div>
+          <div class="form-row">
+            <label for="adoptMessage">Message</label>
+            <textarea id="adoptMessage" name="message" rows="2"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Submit Adoption Request</button>
+          <p class="form-status" id="adoptFormStatus" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 10. FEEDING PROGRAM ================= -->
+  <section class="feeding" id="feeding">
+    <div class="container feeding__inner">
+      <div data-reveal>
+        <p class="eyebrow">The Simplest Way to Help</p>
+        <h2 class="section-title">Feed a Stray</h2>
+        <p class="section-lede">Food and water are basic needs — and one of the most direct ways you can support a street animal today. Every contribution goes toward keeping bowls full along our feeding routes.</p>
+
+        <div class="amount-picker" role="group" aria-label="Choose an amount to help feed a dog">
+          <button class="amount-chip" data-amount="50">₹50</button>
+          <button class="amount-chip" data-amount="100">₹100</button>
+          <button class="amount-chip" data-amount="250">₹250</button>
+          <button class="amount-chip" data-amount="500">₹500</button>
+          <div class="amount-chip amount-chip--custom">
+            <label for="customAmount" class="sr-only">Custom amount</label>
+            <span>₹</span>
+            <input type="number" id="customAmount" min="1" placeholder="Custom">
+          </div>
+        </div>
+        <p class="fine-print">*Suggested amounts shown for convenience — not official fixed donation tiers unless configured by the NGO.</p>
+        <a href="#donate" class="btn btn--primary">Help Feed a Dog</a>
+      </div>
+      <div data-reveal><img src="images/street-dogs.jpg" alt="Street dogs resting together" style="width:100%;height:100%;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-lg);"></div>
+    </div>
+  </section>
+
+  <!-- ================= 12. SHELTER / DOG HOUSE ================= -->
+  <section class="shelter" id="shelter">
+    <div class="container shelter__inner">
+      <div data-reveal><img src="images/street-dogs.jpg" alt="Street dogs in a safe resting area" style="width:100%;height:100%;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-lg);"></div>
+      <div data-reveal>
+        <p class="eyebrow">Protection From the Elements</p>
+        <h2 class="section-title">A Safe Place for Every Paw</h2>
+        <p class="section-lede">Street animals face harsh sun, heavy monsoons and cold nights with no cover of their own. Simple dog houses and shaded shelter points give them somewhere safe to rest.</p>
+        <p class="fine-print">*Shelter locations and capacity: [ADD REAL INFORMATION]</p>
+        <a href="#donate" class="btn btn--primary">Support a Shelter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 13. RESCUE & MEDICAL / REPORT ================= -->
+  <section class="report" id="report">
+    <div class="container">
+      <p class="eyebrow">See an Animal in Trouble?</p>
+      <h2 class="section-title">An Animal Needs Help?</h2>
+      <p class="section-lede">If you've spotted an injured, sick or abandoned animal, let us know. Every report helps us respond faster.</p>
+
+      <div class="form-card" data-reveal>
+        <h3>Report an Animal</h3>
+        <form id="reportForm" novalidate>
+          <div class="form-row form-row--split">
+            <div>
+              <label for="reportName">Name</label>
+              <input type="text" id="reportName" name="fullName" required>
+            </div>
+            <div>
+              <label for="reportPhone">Phone</label>
+              <input type="tel" id="reportPhone" name="phone" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="reportEmail">Email</label>
+            <input type="email" id="reportEmail" name="email">
+          </div>
+          <div class="form-row">
+            <label for="reportLocation">Location</label>
+            <input type="text" id="reportLocation" name="location" required>
+          </div>
+          <div class="form-row form-row--split">
+            <div>
+              <label for="reportAnimalType">Animal Type</label>
+              <input type="text" id="reportAnimalType" name="animalType" placeholder="e.g. Dog" required>
+            </div>
+            <div>
+              <label for="reportCondition">Condition</label>
+              <select id="reportCondition" name="condition" required>
+                <option value="" disabled selected>Select condition</option>
+                <option>Injured</option>
+                <option>Sick</option>
+                <option>Abandoned</option>
+                <option>Needs Food</option>
+                <option>Lost</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="reportDescription">Description</label>
+            <textarea id="reportDescription" name="description" rows="3" required></textarea>
+          </div>
+          <div class="form-row">
+            <label for="reportImage">Upload Image</label>
+            <input type="file" id="reportImage" name="image" accept="image/*">
+          </div>
+          <button type="submit" class="btn btn--primary">Submit Report</button>
+          <p class="form-status" id="reportFormStatus" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11. VOLUNTEER ================= -->
+  <section class="volunteer" id="volunteer">
+    <div class="container volunteer__inner">
+      <div data-reveal>
+        <p class="eyebrow">Give Your Time</p>
+        <h2 class="section-title">Become a Volunteer</h2>
+        <p class="section-lede">Volunteers are the heart of our feeding routes. Join a feeding activity in your city and meet the animals you're helping, face to face.</p>
+        <img src="images/hero-feeding.jpg" alt="Volunteer feeding rescued street dogs" style="width:100%;height:280px;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-md);">
+      </div>
+
+      <div class="form-card" data-reveal>
+        <h3>Volunteer Registration</h3>
+        <form id="volunteerForm" novalidate>
+          <div class="form-row form-row--split">
+            <div>
+              <label for="volName">Name</label>
+              <input type="text" id="volName" name="fullName" required>
+            </div>
+            <div>
+              <label for="volPhone">Phone</label>
+              <input type="tel" id="volPhone" name="phone" required>
+            </div>
+          </div>
+          <div class="form-row form-row--split">
+            <div>
+              <label for="volEmail">Email</label>
+              <input type="email" id="volEmail" name="email" required>
+            </div>
+            <div>
+              <label for="volCity">City</label>
+              <input type="text" id="volCity" name="city" required>
+            </div>
+          </div>
+          <div class="form-row form-row--split">
+            <div>
+              <label for="volDate">Preferred Date</label>
+              <input type="date" id="volDate" name="preferredDate" required>
+            </div>
+            <div>
+              <label for="volPeople">Number of People</label>
+              <input type="number" id="volPeople" name="numberOfPeople" min="1" value="1">
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="volActivity">Activity</label>
+            <select id="volActivity" name="activity">
+              <option selected>Feeding Dogs</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="volMessage">Message</label>
+            <textarea id="volMessage" name="message" rows="2"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Join as a Volunteer</button>
+          <p class="form-status" id="volunteerFormStatus" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 14. DONATION ================= -->
+  <section class="donate" id="donate">
+    <div class="container">
+      <p class="eyebrow">Every Contribution Counts</p>
+      <h2 class="section-title">Your Support Can Save a Life.</h2>
+      <p class="section-lede">Donations go directly toward food, water, medical treatment, rescue operations, shelter and dog houses, and everyday animal welfare activities.</p>
+
+      <div class="donate__panel" data-reveal>
+        <div class="donate__qr">
+          <div class="qr-box" aria-label="Donation QR code">
+            <img src="images/donation-qr.jpeg" alt="Scan here to pay — Cube Works Social Foundation donation QR code" class="donation-qr">
+          </div>
+          <div class="donation-merchant-info">
+            <p><span>Merchant Name:</span> <strong>CUBE WORKS SOCIAL FOUNDAT</strong></p>
+          </div>
+        </div>
+        <div class="donate__info">
+          <h3>Scan &amp; Donate via UPI</h3>
+          <p>Open any UPI app, scan the code, and support the animals in our care directly. No payment details are processed on this website.</p>
+          <ul class="donate__uses">
+            <li>🍲 Food &amp; water</li>
+            <li>🏥 Medical treatment</li>
+            <li>🚑 Rescue operations</li>
+            <li>🏠 Shelter &amp; dog houses</li>
+            <li>❤️ General welfare activities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 15. SUCCESS STORIES ================= -->
+  <section class="stories" id="stories">
+    <div class="container">
+      <p class="eyebrow">Real Journeys</p>
+      <h2 class="section-title">From Streets to Safe Homes</h2>
+
+      <div class="story-card" data-reveal>
+        <div class="story-card__timeline" aria-hidden="true">
+          <span>Before</span><span>Rescue</span><span>Care</span><span>Adoption</span><span>After</span>
+        </div>
+        <div class="story-card__grid">
+          <img src="images/street-dogs.jpg" alt="Rescue story before care">
+          <div class="story-card__copy">
+            <h3>[ADD ANIMAL NAME]</h3>
+            <p><strong>Rescue situation:</strong> [ADD REAL INFORMATION]</p>
+            <p><strong>Treatment &amp; care:</strong> [ADD REAL INFORMATION]</p>
+            <p><strong>Adoption:</strong> [ADD REAL INFORMATION]</p>
+            <p><strong>Current status:</strong> [ADD REAL INFORMATION]</p>
+          </div>
+          <img src="images/dog-care.jpg" alt="Rescue story after care">
+        </div>
+      </div>
+      <p class="fine-print">*Placeholder story shown until real rescue and adoption stories are provided by the NGO.</p>
+    </div>
+  </section>
+
+  <!-- ================= 16. GALLERY ================= -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <p class="eyebrow">In Pictures</p>
+      <h2 class="section-title">Animal Gallery</h2>
+
+      <div class="gallery-filters" role="tablist" aria-label="Filter gallery">
+        <button class="chip is-active" data-gfilter="all">All</button>
+        <button class="chip" data-gfilter="rescue">Rescue</button>
+        <button class="chip" data-gfilter="feeding">Feeding</button>
+        <button class="chip" data-gfilter="shelter">Shelter</button>
+        <button class="chip" data-gfilter="adoption">Adoption</button>
+        <button class="chip" data-gfilter="success">Success Stories</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item" data-cat="feeding" data-label="Feeding street dogs"><img src="images/hero-feeding.jpg" alt="Feeding street dogs"></div>
+        <div class="gallery-item" data-cat="rescue" data-label="Rescue and care"><img src="images/dog-care.jpg" alt="Rescue and care"></div>
+        <div class="gallery-item" data-cat="shelter" data-label="Street dogs resting safely"><img src="images/street-dogs.jpg" alt="Street dogs resting safely"></div>
+        <div class="gallery-item" data-cat="adoption" data-label="Dogs finding a safe home"><img src="images/mother-puppies.jpg" alt="Dogs finding a safe home"></div>
+        <div class="gallery-item" data-cat="success" data-label="Animal welfare success"><img src="images/dog-group.jpg" alt="Animal welfare success"></div>
+        <div class="gallery-item" data-cat="feeding" data-label="Feeding rescued puppies"><img src="images/feeding-puppies.jpg" alt="Feeding rescued puppies"></div>
+        <div class="gallery-item" data-cat="rescue" data-label="Rescued dogs together"><img src="images/dog-group-2.jpg" alt="Rescued dogs together"></div>
+        <div class="gallery-item" data-cat="adoption" data-label="Dogs and puppies"><img src="images/feeding-puppies.jpg" alt="Dogs and puppies"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 17. SOCIAL MEDIA ================= -->
+  <section class="social" id="social">
+    <div class="container">
+      <p class="eyebrow">Stay Close to the Work</p>
+      <h2 class="section-title">Follow Our Journey</h2>
+      <p class="section-lede">Daily updates from feeding routes, rescues, and adoption days — mostly from our Instagram.</p>
+
+      <div class="social-grid">
+        <div class="social-item"><img src="images/hero-feeding.jpg" alt="Feeding rescued street dogs"></div>
+        <div class="social-item"><img src="images/dog-care.jpg" alt="Caring for a rescued dog"></div>
+        <div class="social-item"><img src="images/street-dogs.jpg" alt="Street dogs resting together"></div>
+        <div class="social-item"><img src="images/mother-puppies.jpg" alt="Mother dog and puppies"></div>
+        <div class="social-item"><img src="images/feeding-puppies.jpg" alt="Rescued puppies being fed"></div>
+        <div class="social-item"><img src="images/dog-group.jpg" alt="Rescued dogs together"></div>
+      </div>
+      <a href="https://www.instagram.com/cubebehindyou/" class="btn btn--outline" id="instagramLink" target="_blank" rel="noopener noreferrer">Follow Us on Instagram</a>
+    </div>
+  </section>
+
+  <!-- ================= 18. CONTACT ================= -->
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <div data-reveal>
+        <p class="eyebrow">Reach Us</p>
+        <h2 class="section-title">Contact Us</h2>
+        <ul class="contact__details">
+          <li><strong>Office Address:</strong> Office No. 6, Veehan Residency, Near HDFC Bank, Warje, Pune, Maharashtra 411028</li>
+          <li><strong>Phone:</strong> <a href="tel:+918554830840">+91-8554830840</a></li>
+          <li><strong>Email:</strong> <a href="mailto:cubeworksocialfoundation@gmail.com">cubeworksocialfoundation@gmail.com</a></li>
+          <li><strong>Instagram:</strong> <a href="https://www.instagram.com/cubebehindyou/" target="_blank" rel="noopener noreferrer">@cubebehindyou</a></li>
+        </ul>
+      </div>
+
+      <div class="form-card" data-reveal>
+        <form id="contactForm" action="https://formsubmit.co/yashgomase20@gmail.com" method="POST" novalidate>
+          <div class="form-row">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="fullName" required>
+          </div>
+          <div class="form-row">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" required>
+          </div>
+          <div class="form-row">
+            <label for="contactSubject">Subject</label>
+            <input type="text" id="contactSubject" name="subject">
+          </div>
+          <div class="form-row">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="3" required></textarea>
+          </div>
+          <input type="hidden" name="_subject" value="New Website Contact Message">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <button type="submit" class="btn btn--primary">Send Message</button>
+          <p class="form-status" id="contactFormStatus" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 25. WAYS TO HELP (PHILOSOPHY) ================= -->
+  <section class="ways-to-help">
+    <div class="container">
+      <h2 class="section-title section-title--center">Every Animal Deserves a Chance.</h2>
+      <p class="section-lede section-lede--center">Here's how you can be part of it:</p>
+      <div class="ways-grid">
+        <a href="#feeding" class="way-chip">🐾 Feed a stray</a>
+        <a href="#shelter" class="way-chip">🏠 Support shelter</a>
+        <a href="#report" class="way-chip">🏥 Help a rescued animal</a>
+        <a href="#animals" class="way-chip">🏡 Adopt a dog</a>
+        <a href="#volunteer" class="way-chip">❤️ Volunteer</a>
+        <a href="#donate" class="way-chip">💰 Donate</a>
+        <a href="#report" class="way-chip">🚨 Report an animal in need</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="brand__text">Paw Trails</span>
+      <p>An animal welfare initiative by CubeWorkSocial.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#our-work">Our Work</a></li>
+        <li><a href="#animals">Animals</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="admin.html">Admin Login</a></li>
+      </ul>
+    </nav>
+    <p class="footer__legal">© <span id="footerYear"></span> Paw Trails · CubeWorkSocial. Made with ❤️ for street animals.</p>
+  </div>
+</footer>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
